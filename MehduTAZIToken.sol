@@ -25,7 +25,7 @@ contract MehdiTAZIToken is EIP20Interface {
         totalSupply = _initialAmount;                        // Update total supply
         name = "Mehdi TAZI Token";//_tokenName;                                   // Set the name for display purposes
         decimals = 18;//_decimalUnits;                            // Amount of decimals for display purposes
-        symbol = "MTT";//_tokenSymbol;                               // Set the symbol for display purposes
+        symbol = "MTA";//_tokenSymbol;                               // Set the symbol for display purposes
     }
 
     function transfer(address _to, uint256 _value) public returns (bool success) {
