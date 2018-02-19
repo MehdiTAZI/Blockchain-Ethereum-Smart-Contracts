@@ -1,5 +1,5 @@
 
-pragma solidity ^0.4.16;
+pragma solidity ^0.4.20;
 
 import "./MehdiTAZIToken.sol";
 
