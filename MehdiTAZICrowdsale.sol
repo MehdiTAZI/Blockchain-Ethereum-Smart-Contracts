@@ -1,5 +1,4 @@
-
-pragma solidity ^0.4.20;
+pragma solidity ^0.4.16;
 
 import "./MehdiTAZIToken.sol";
 
@@ -27,8 +26,11 @@ contract MehdiTAZICrowdsale is MehdiTAZIToken {
         uint fundingGoalInEthers,
         uint durationInMinutes,
         uint etherCostOfEachToken,
-        address addressOfTokenUsedAsReward
-    ) {
+        address addressOfTokenUsedAsReward,
+        uint256 initialSupply,
+        string tokenName,
+        string tokenSymbol
+    )MehdiTAZIToken(initialSupply, tokenName, tokenSymbol)  {
         beneficiary = ifSuccessfulSendTo;
         fundingGoal = fundingGoalInEthers * 1 ether;
         deadline = now + durationInMinutes * 1 minutes;

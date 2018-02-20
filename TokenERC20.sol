@@ -1,16 +1,12 @@
-pragma solidity ^0.4.20;
+pragma solidity ^0.4.16;
 
-interface tokenRecipient { function receiveApproval(address _from, uint256 _value, address _token, bytes _extraData) public; }
-
-contract MehdiTAZIToken {
+contract TokenERC20 {
     // Public variables of the token
-    string  public name = "Mehdi TAZI";
-    string  public symbol = "MTA";
-    uint8  public decimals = 18;
-    uint256  public initialSupply = 1000000;
+    string public name;
+    string public symbol;
+    uint8 public decimals = 18;
     // 18 decimals is the strongly suggested default, avoid changing it
     uint256 public totalSupply;
-    address public creator;
 
     // This creates an array with all balances
     mapping (address => uint256) public balanceOf;
@@ -23,11 +19,11 @@ contract MehdiTAZIToken {
     event Burn(address indexed from, uint256 value);
 
     /**
-     * Constructor function
+     * Constrctor function
      *
      * Initializes contract with initial supply tokens to the creator of the contract
      */
-    function MehdiTAZIToken(
+    function TokenERC20(
         uint256 initialSupply,
         string tokenName,
         string tokenSymbol
@@ -36,7 +32,6 @@ contract MehdiTAZIToken {
         balanceOf[msg.sender] = totalSupply;                // Give the creator all initial tokens
         name = tokenName;                                   // Set the name for display purposes
         symbol = tokenSymbol;                               // Set the symbol for display purposes
-        creator = msg.sender;
     }
 
     /**
@@ -75,7 +70,7 @@ contract MehdiTAZIToken {
     /**
      * Transfer tokens from other address
      *
-     * Send `_value` tokens to `_to` on behalf of `_from`
+     * Send `_value` tokens to `_to` in behalf of `_from`
      *
      * @param _from The address of the sender
      * @param _to The address of the recipient
@@ -91,7 +86,7 @@ contract MehdiTAZIToken {
     /**
      * Set allowance for other address
      *
-     * Allows `_spender` to spend no more than `_value` tokens on your behalf
+     * Allows `_spender` to spend no more than `_value` tokens in your behalf
      *
      * @param _spender The address authorized to spend
      * @param _value the max amount they can spend
@@ -105,7 +100,7 @@ contract MehdiTAZIToken {
     /**
      * Set allowance for other address and notify
      *
-     * Allows `_spender` to spend no more than `_value` tokens on your behalf, and then ping the contract about it
+     * Allows `_spender` to spend no more than `_value` tokens in your behalf, and then ping the contract about it
      *
      * @param _spender The address authorized to spend
      * @param _value the max amount they can spend
