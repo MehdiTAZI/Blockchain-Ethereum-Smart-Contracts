@@ -1,4 +1,11 @@
-pragma solidity ^0.4.16;
+pragma solidity ^0.4.2;
+
+/************************************************************************/
+/*   Author   : Mehdi TAZI                                              */
+/*   Website  : tazimehdi.com                                           */
+/*   Source   : https://github.com/MehdiTAZI/EthereumBlockchainToken    */
+/*   Original : http://ethereum.org                                     */
+/************************************************************************/
 
 import "./MehdiTAZIToken.sol";
 
