@@ -1,9 +1,18 @@
-pragma solidity ^0.4.16;
+pragma solidity ^0.4.2;
 
-contract Owned {
+/************************************************************************/
+/*   Author   : Mehdi TAZI                                              */
+/*   Website  : tazimehdi.com                                           */
+/*   Source   : https://github.com/MehdiTAZI/EthereumBlockchainToken    */
+/************************************************************************/
+
+contract Ownable {
+
+    /* owner adress */
     address public owner;
 
-    function owned() public {
+
+    function Ownable() public {
         owner = msg.sender;
     }
 
@@ -12,6 +21,7 @@ contract Owned {
         _;
     }
 
+    /* only the owner have the ability to transfer it ownership */
     function transferOwnership(address newOwner) onlyOwner public {
         owner = newOwner;
     }
